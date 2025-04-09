@@ -13,13 +13,13 @@ public class MyThread extends Thread{
         long curr = 0;
         long components = 0;                                    //<---кількість елементів послідовності
         boolean isStop = false;
-        while (!isStop)
-        {
+
+        do{
             sum += curr;
             curr += step;
             components++;
             isStop = breakThread.isCanBreak();
-        }
+        }while (!isStop);
         PrintResult(sum,components);
     }
 
